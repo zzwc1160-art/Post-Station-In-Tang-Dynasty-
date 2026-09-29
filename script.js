@@ -406,3 +406,52 @@ fetch("tang.geojson")
     .catch(error => {
         console.error("唐代州府边界加载失败：", error);
     });
+
+// ==============================
+// 唐代水路交通线
+// ==============================
+
+fetch("水路交通线.geojson")
+    .then(response => response.json())
+    .then(data => {
+
+        const waterTransport = L.geoJSON(data, {
+            interactive: false,
+            style: {
+                color: "#2787C7",
+                weight: 2,
+                opacity: 0.8
+            }
+        });
+
+        layerControl.addOverlay(waterTransport, "唐代水路交通线");
+
+    })
+    .catch(error => {
+        console.error("水路交通线加载失败：", error);
+    });
+
+
+// ==============================
+// 唐代陆路交通线
+// ==============================
+
+fetch("陆路交通线.geojson")
+    .then(response => response.json())
+    .then(data => {
+
+        const landTransport = L.geoJSON(data, {
+            interactive: false,
+            style: {
+                color: "#D97732",
+                weight: 2,
+                opacity: 0.8
+            }
+        });
+
+        layerControl.addOverlay(landTransport, "唐代陆路交通线");
+
+    })
+    .catch(error => {
+        console.error("陆路交通线加载失败：", error);
+    });
