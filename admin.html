@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>留言管理</title>
+
+    <style>
+
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            margin: 40px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: #f5f5f5;
+        }
+
+        .content {
+            min-width: 300px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>全唐诗地图——留言管理</h1>
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>ID</th>
+                <th>地点</th>
+                <th>经度</th>
+                <th>纬度</th>
+                <th>留言</th>
+                <th>时间</th>
+            </tr>
+
+        </thead>
+
+        <tbody id="comment-list">
+
+        </tbody>
+
+    </table>
+
+
+    <script>
+
+        fetch("/api/comments")
+
+            .then(response => response.json())
+
+            .then(comments => {
+
+                const list =
+                    document.getElementById(
+                        "comment-list"
+                    );
+
+
+                comments.forEach(comment => {
+
+                    const row =
+                        document.createElement("tr");
+
+
+                    row.innerHTML = `
+
+                        <td>${comment.id}</td>
+
+                        <td>${comment.place}</td>
+
+                        <td>${comment.longitude}</td>
+
+                        <td>${comment.latitude}</td>
+
+                        <td class="content">
+                            ${comment.content}
+                        </td>
+
+                        <td>${comment.time}</td>
+
+                    `;
+
+
+                    list.appendChild(row);
+
+                });
+
+            });
+
+    </script>
+
+</body>
+
+</html>

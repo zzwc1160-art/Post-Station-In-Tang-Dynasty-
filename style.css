@@ -1,0 +1,140 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+/* 地图 */
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ==============================
+   右侧属性栏
+   ============================== */
+
+#info-panel {
+    position: fixed;
+
+    top: 0;
+    right: -420px;
+
+    width: 380px;
+    height: 100%;
+
+    padding: 30px 20px;
+
+    box-sizing: border-box;
+
+    background: white;
+
+    z-index: 1000;
+
+    overflow-y: auto;
+
+    box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+
+    transition: right 0.3s;
+}
+
+
+/* 打开属性栏 */
+#info-panel.open {
+    right: 0;
+}
+
+
+/* 关闭按钮 */
+#close-panel {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    border: none;
+
+    background: none;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* 标题 */
+#info-panel h2 {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+
+/* 每一条属性 */
+.attribute {
+    padding: 12px 0;
+
+    border-bottom: 1px solid #ddd;
+}
+
+
+/* 属性名称 */
+.attribute span {
+    font-weight: bold;
+}
+
+
+/* 属性内容 */
+.attribute p {
+    margin: 5px 0 0 0;
+
+    line-height: 1.6;
+}
+
+/* ==============================
+   留言框
+   ============================== */
+
+#comment-box {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+#comment-box h3 {
+    margin: 0 0 12px 0;
+    font-size: 18px;
+}
+
+#comment-input {
+    width: 100%;
+    height: 120px;
+    box-sizing: border-box;
+    padding: 10px;
+    resize: vertical;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.6;
+    font-family: inherit;
+}
+
+#comment-submit {
+    margin-top: 10px;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 4px;
+    background: #333;
+    color: white;
+    cursor: pointer;
+}
+
+#comment-submit:hover {
+    background: #555;
+}
+
+#comment-status {
+    margin-top: 8px;
+    font-size: 13px;
+}

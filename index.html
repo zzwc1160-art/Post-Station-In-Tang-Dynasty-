@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>全唐诗地图</title>
+
+    <!-- Leaflet -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <!-- 网站自己的样式 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 地图 -->
+    <div id="map"></div>
+
+
+    <!-- 右侧属性栏 -->
+    <div id="info-panel">
+
+        <button id="close-panel">×</button>
+
+        <div id="info-content">
+            <h2>请选择地图上的点</h2>
+
+            <div id="comment-box">
+
+                <h3>提交留言</h3>
+
+                <textarea
+                    id="comment-input"
+                    placeholder="请输入你对这个地点的意见或订误建议……"
+                ></textarea>
+
+                <button id="submit-comment">提交留言</button>
+
+                <p id="comment-status"></p>
+        </div>
+
+    </div>
+
+
+    <!-- Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Excel解析 -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+    <!-- 网站自己的JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
