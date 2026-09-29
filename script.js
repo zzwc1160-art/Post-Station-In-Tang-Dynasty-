@@ -395,7 +395,7 @@ fetch("tang.geojson")
             style: {
                 color: "#000000",
                 weight: 1,
-                fillColor: "#ff7300",
+                fillColor: "#e76800",
                 fillOpacity: 0
             }
         })
